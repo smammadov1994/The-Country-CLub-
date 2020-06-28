@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+{%block header%}
+<style>
+    	body{
+    		background-image: url(https://wallpapercave.com/wp/wp5035175.jpg);
+    		background-size: 100%;
+    		background-repeat: no-repeat;
+    	}
+
+    	.container{
+    		display: flex;
+    		justify-content: center;
+    		position: relative;
+    		top: 50vh;
+    	}
+   </style>
+
+{%endblock%}
+
+
+
+{%block body%}
+<div class='container'>
+<form action="{{ url_for('dashboard') }}" method="post">
+  <div class="form-row">
+    <div class="col">
+      <input type="text" name='username' class="form-control" placeholder="Username">
+    </div>
+  </div>
+</form>
+</div>
+
+{%endblock%} 

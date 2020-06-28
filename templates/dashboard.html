@@ -1,0 +1,87 @@
+{% extends 'index.html' %}
+
+
+{%block header%}
+    <style>
+
+
+    	body{
+    		background-image: url(https://wallpapercave.com/wp/wp5035175.jpg);
+    		background-size: 100%;
+    		background-repeat: no-repeat;
+    	}
+
+    	.card{
+    		float: right;
+    		margin: 10px;
+    		max-height: 300px;
+    		overflow-x: hidden;
+    	}
+
+    	.list-group li:hover {
+    		background-color: #f6e394;
+    		color: #fff;
+    		transform: scale(1.1);
+    	}
+
+    	.navbar{
+    		background-color: #fff !important;
+
+    	}
+    	div.card-header{
+    		background-color: #47abba;
+    		color: white;
+    		overflow: hidden;
+			position: fixed;
+			right:10px;
+			top: 45px;
+			width: 300px;
+			  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+
+    	}
+    	span{
+    		font-size: 10px;
+    	}
+    	.notes{
+    		display: flex;
+    		justify-content: center;
+    		margin: 5px;
+   
+    	}
+    	.notes-input{
+    		padding: 5px;
+    		border: 1.2px solid #0c96a1;
+    	}
+
+       </style>
+
+{%endblock%}
+
+
+{%block body%}
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.pinimg.com/originals/b8/3d/45/b83d458c77c913b4df131ce941f7f9c4.jpg" width="50" height="50" class="d-inline-block" alt="">
+    <span>Hello {{name}}, Welcome To Fallen West Club</span>
+  </a>
+</nav>
+<div class='main-container'>
+<div class="card-header">
+    Activities on {{date}}
+  </div>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+
+	  	{%for activity in activities%}
+	    <li class="list-group-item">{{activity}}</li>
+	    {%endfor%}
+  </ul>
+     <form action ="{{url_for('dashboard')}}" method="post"  class="notes form">
+			<input type='text' class='notes-input' name='activities' id='#style-6' width=100 placeholder="Add note"/>
+	</form>
+</div>
+</div>
+
+
+
+{%endblock%}
